@@ -25,7 +25,7 @@
     
     window.addEventListener("scroll", () => {
       const currentScrollY = window.scrollY;
-      if (Math.abs(currentScrollY - lastScrollY) > 5) {
+      if (Math.abs(currentScrollY - lastScrollY) > 200) {
         if (currentScrollY > lastScrollY && currentScrollY > 100) {
           header.classList.add("hide-header");
         } else {

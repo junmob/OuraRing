@@ -11,9 +11,9 @@
 
   <header id="header" class="site-header"></header>
   
-  <!-- <main>
+  <main>
     <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-  </main> -->
+  </main>
 
   
 
@@ -22,10 +22,17 @@
       .then(res => res.text())
       .then(data => {
         document.getElementById('header').innerHTML = data;
+
         const script = document.createElement('script');
         script.src = 'js/header.js';
         document.body.appendChild(script);
+        
+        const shopButton = document.getElementById("shop-button");
+        if (window.location.pathname.includes("ShopPage.html")) {
+          shopButton.textContent = "Choose Your Ring";
+        }
       });
+
   </script>
 
 </body>
