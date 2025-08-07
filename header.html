@@ -1,37 +1,84 @@
-<div class="navbar">
+<div id="overlay" class="overlay"></div>
 
+<!-- Header -->
+<div class="navbar">
+  <!-- Logo -->
   <div class="logo">
     <a href="HomePage.html">ŌURA</a>
   </div>
 
+  <!-- Navbar Center -->
   <div class="nav-center">
     <div class="nav-links">
-      <a href="WhyOura.html">Why Oura</a>
-      <a href="HowItWorks.html">How It Works</a>
-      <a href="ForBusiness.html">For Business</a>
+    <a href="WhyOura.html">Why Oura</a>
+    <a href="HowItWorks.html">How It Works</a>
+    <a href="ForBusiness.html">For Business</a>
     </div>
-    <button class="shop-button">Shop</button>
+    <a href="ShopPage.html">
+      <button class="shop-button">Shop</button>
+    </a>
   </div>
 
+  <!-- Menu Button -->
   <div class="menu">
     <span>Menu</span>
     <button id="menu-toggle" class="menu-icon">=</button>
   </div>
+</div>
 
-  
+<!-- Menu Wrapper -->
+<div id="menu-wrapper" class="menu-wrapper">
+  <div class="menu-content">
+    <!-- Menu Header with Logo and Close Button -->
+    <div class="menu-header">
+      <div class="logo">
+        <a href="HomePage.html">ŌURA</a>
+      </div>
+      <div class="menu">
+        <span>Close</span>
+        <button class="close-btn" id="menu-close">✕</button>
+      </div>
+    </div>
 
+    <div class="menu-columns">
+
+      <!-- Shop Column -->
+      <div class="menu-column">
+        <h4>Shop</h4>
+        <ul>
+          <li><a href="ShopPage.html">Shop</a></li>
+          <li><a href="OuraRing4.html">Oura Ring 4</a><sup class="sale-tag">On Sale</sup></li>
+        </ul>
+      </div>
+
+      <!-- Why Oura Column -->
+      <div class="menu-column">
+        <h4>Why Oura</h4>
+        <ul>
+          <li><a href="WhyOura.html">Explore Why Oura</a></li>
+          <li><a href="ScienceAndResearch.html">Science and Research</a></li>
+        </ul>
+      </div>
+
+      <!-- How It Works Column -->
+      <div class="menu-column">
+        <h4>How It Works</h4>
+        <ul>
+          <li><a href="HowItWorks.html">Explore How It Works</a></li>
+          <li><a href="Integrations.html">Integrations</a></li>
+        </ul>
+      </div>
+
+      <!-- Image Section -->
+      <div class="menu-image-section">
+        <div class="menu-image-button">
+          <img src="images/header-image.png" alt="Oura Ring">
+          <a href="ShopPage.html">
+            <button class="shop-button corner">Shop</button></span>
+          </a>
+        </div>
+      </div>
+
+    </div>
   </div>
 </div>
-
-<div id="menu-overlay" class="menu-overlay">
-  <button id="close-menu" class="close-btn">✕</button>
-  <nav class="menu-links">
-    <a href="#">Why Oura</a>
-    <a href="#">How It Works</a>
-    <a href="#">For Business</a>
-    <a href="#">Shop</a>
-    <!-- 其他导航 -->
-  </nav>
-</div>
-
-

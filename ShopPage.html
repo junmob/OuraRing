@@ -5,14 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Discover Oura's health, fitness, and sleep rings | Oura</title>
   <link rel="icon" type="image/x-icon" href="/images/icon-32x32.png">
-  <link rel="stylesheet" href="css/style-jun.css">
+  <link rel="stylesheet" href="css/header.css">
 </head>
 <body>
 
   <header id="header" class="site-header"></header>
-  <main>
+  
+  <!-- <main>
     <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-  </main>
+  </main> -->
 
   
 
@@ -21,8 +22,6 @@
       .then(res => res.text())
       .then(data => {
         document.getElementById('header').innerHTML = data;
-
-        // ✅ header 插入后再加载 header.js
         const script = document.createElement('script');
         script.src = 'js/header.js';
         document.body.appendChild(script);
