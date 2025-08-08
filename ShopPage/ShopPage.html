@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Discover Oura's health, fitness, and sleep rings | Oura</title>
+  <link rel="icon" type="image/x-icon" href="/assets/images/icon-32x32.png" />
+  <link rel="stylesheet" href="../components//header/header.css" />
+  <link rel="stylesheet" href="../shared/fonts.css" />
+  <link rel="stylesheet" href="ShopPage.css">
+  <script type="text/javascript" src="ShopPage.js"></script>
+</head>
+<body>
+  <header id="header" class="site-header"></header>
+
+  <main>
+    
+  </main>
+
+  <script>
+    fetch("../components/header/header.html")
+      .then((res) => res.text())
+      .then((data) => {
+        document.getElementById("header").innerHTML = data;
+
+        const script = document.createElement("script");
+        script.src = "../components/header/header.js";
+        document.body.appendChild(script);
+
+        const shopButton = document.getElementById("shop-button");
+        if (shopButton && currentPath.includes("ShopPage.html")) {
+          shopButton.textContent = "Choose Your Ring";
+          shopButton.href = "../ShopPage2/OuraRing4.html";
+        }
+
+      });
+  </script>
+
+</body>
+</html>
