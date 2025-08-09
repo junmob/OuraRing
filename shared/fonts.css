@@ -20,6 +20,20 @@
 }
 
 @font-face {
+  font-family: 'PPEditorialNew-Light';
+  src: url('../assets/fonts/PPEditorialNew-Light.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'PPEditorialNew-UltraLight';
+  src: url('../assets/fonts/PPEditorialNew-Ultralight.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
   font-family: 'PPEditorialNew-UltraLightItalic';
   src: url('../assets/fonts/PPEditorialNew-UltralightItalic.woff2') format('woff2');
   font-weight: normal;
