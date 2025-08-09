@@ -13,13 +13,6 @@
 }
 
 @font-face {
-  font-family: 'MyAkkurattLL-Light';
-  src: url('../assets/fonts/AkkuratLL-Light.woff2') format('woff2');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
   font-family: 'PPEditorialNew-Light';
   src: url('../assets/fonts/PPEditorialNew-Light.woff2') format('woff2');
   font-weight: normal;
