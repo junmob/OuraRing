@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
 }
 
 body {
@@ -34,19 +35,19 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 8px 16px;
+  padding: 16px 16px;
   z-index: 10;
-  margin-bottom: -6px;
 }
 
 .logo {
   color: #fefaef;
-  transform: scaleY(0.7);
+  transform: scaleY(0.8);
   font-family: 'MyAkkurattLL-Light';
-  font-size: 48px;
+  font-size: 40px;
   font-weight: 100;
   cursor: pointer;
   text-decoration: none;
+  margin-top: 5px;
 }
 
 .logo:hover {

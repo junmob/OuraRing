@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sleep Tracker Interface</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      /* body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          Oxygen, Ubuntu, Cantarell, sans-serif;
+        background-color: #1a1a1a;
+        color: white;
+        overflow-x: hidden;
+      } */
+
+      .container {
+        position: relative;
+        /* min-height: 100vh; */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .background-image {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        max-height: 900px;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        z-index: -1;
+        opacity: 0;
+        transition: opacity 0.5s ease-in-out;
+      }
+
+      .background-image.active {
+        opacity: 1;
+      }
+
+      .background-june {
+        background-image: url("/assets/images/june.jpg");
+      }
+
+      .background-july {
+        background-image: url("/assets/images/july.jpg");
+      }
+
+      .background-august {
+        background-image: url("/assets/images/august.jpg");
+      }
+
+      .month-selection {
+        position: sticky;
+        top: 20px;
+        display: flex;
+        background: rgba(0, 0, 0, 0.25);
+        border-radius: 50px;
+        padding: 4px;
+        margin-bottom: 40px;
+        z-index: 100;
+      }
+
+      .month-btn {
+        background: transparent;
+        border: none;
+        padding: 12px 24px;
+        border-radius: 50px;
+        color: #4a4741;
+        font-size: 16px;
+        font-weight: 500;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        position: relative;
+      }
+
+      .month-btn.active {
+        background: #efeae2;
+        color: #4a4741;
+      }
+
+      .app-ui-container {
+        position: relative;
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        transition: transform 0.3s ease, opacity 0.5s ease;
+        max-width: 400px;
+        width: 90%;
+      }
+
+      .app-ui-image {
+        width: 100%;
+        height: auto;
+        display: block;
+        opacity: 0;
+        transition: opacity 0.5s ease-in-out;
+      }
+
+      .app-ui-image.active {
+        opacity: 1;
+      }
+
+      /* Mobile styles */
+      @media (max-width: 768px) {
+        .background-image {
+          display: none;
+        }
+
+        .container {
+          background: #f5f5f5;
+          color: #333;
+          padding: 20px;
+        }
+
+        .month-selection {
+          order: -1;
+          background: rgba(0, 0, 0, 0.1);
+          margin-bottom: 30px;
+          position: relative;
+          top: 0;
+        }
+
+        .month-btn {
+          color: #4a4741;
+        }
+
+        .month-btn.active {
+          background: #ffffff;
+          color: #4a4741;
+        }
+
+        .app-ui-container {
+          max-width: 100%;
+          width: 100%;
+          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+      }
+
+      /* Loading animation */
+      /* .loading {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 40px;
+            height: 40px;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top-color: #fff;
+            animation: spin 1s ease-in-out infinite;
+        }
+
+        @keyframes spin {
+            to { transform: translate(-50%, -50%) rotate(360deg); }
+        }
+
+        .fade-transition {
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        } */
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Background images -->
+      <div class="background-image background-june active" id="bg-june"></div>
+      <div class="background-image background-july" id="bg-july"></div>
+      <div class="background-image background-august" id="bg-august"></div>
+
+      <!-- Month selection -->
+      <div class="month-selection">
+        <button class="month-btn active" data-month="june">June</button>
+        <button class="month-btn" data-month="july">July</button>
+        <button class="month-btn" data-month="august">August</button>
+      </div>
+
+      <!-- App UI container -->
+      <div class="app-ui-container">
+        <div class="loading" id="loading"></div>
+        <img
+          src="/assets/images/june-app-ui-en1.png"
+          alt="June Sleep Tracker"
+          class="app-ui-image active"
+          id="img-june"
+        />
+        <img
+          src="/assets/images/july-app-ui-en.png"
+          alt="July Sleep Tracker"
+          class="app-ui-image"
+          id="img-july"
+        />
+        <img
+          src="/assets/images/august-app-ui-en.png"
+          alt="August Sleep Tracker"
+          class="app-ui-image"
+          id="img-august"
+        />
+      </div>
+    </div>
+
+    <script>
+      let currentMonth = "june";
+
+      // Month selection event listener
+      document.addEventListener("DOMContentLoaded", () => {
+        const monthBtns = document.querySelectorAll(".month-btn");
+        monthBtns.forEach((btn) => {
+          btn.addEventListener("click", (e) => {
+            const month = e.target.dataset.month;
+            if (month !== currentMonth) {
+              switchMonth(month);
+            }
+          });
+        });
+
+        // Hide loading on init
+        document.getElementById("loading").style.display = "none";
+      });
+
+      function switchMonth(newMonth) {
+        // Update button states
+        document.querySelectorAll(".month-btn").forEach((btn) => {
+          btn.classList.toggle("active", btn.dataset.month === newMonth);
+        });
+
+        // Update background images
+        const currentBg = document.getElementById(`bg-${currentMonth}`);
+        const newBg = document.getElementById(`bg-${newMonth}`);
+
+        if (currentBg) currentBg.classList.remove("active");
+        if (newBg) newBg.classList.add("active");
+
+        // Update app UI images
+        const currentImg = document.getElementById(`img-${currentMonth}`);
+        const newImg = document.getElementById(`img-${newMonth}`);
+
+        if (currentImg) currentImg.classList.remove("active");
+        if (newImg) newImg.classList.add("active");
+
+        currentMonth = newMonth;
+      }
+    </script>
+  </body>
+</html>
