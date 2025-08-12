@@ -76,6 +76,7 @@ body {
 }
 
 .brand {
+  font-family: "MyAkkurattLL-Regular", sans-serif;
   font-size: 16px;
   margin-bottom: 16px;
   color: #F7F1E8;
@@ -100,6 +101,7 @@ body {
 }
 
 .description {
+  font-family: "MyAkkurattLL-Regular", sans-serif;
   font-size: clamp(1rem, 2.2vw, 1.125rem);
   margin-bottom: 32px;
   max-width: 460px;
@@ -428,6 +430,10 @@ body {
     grid-column: 1 / 13;
   }
 
+  .section2-text-right {
+    text-align: left;
+    padding-left: 150px;
+  }
   .section2-row2-col2 {
     padding: 0px 0px 24px;
     grid-column: 14 / -1;
