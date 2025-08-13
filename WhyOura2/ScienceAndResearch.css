@@ -62,7 +62,6 @@ body {
       transparent 60%
     ),
     radial-gradient(circle at 25% 75%, rgb(15, 10, 0, 0.2) 0%, transparent 50%);
-  /* background-color: rgba(0, 0, 0, 0.2); */
   z-index: 1;
   pointer-events: none;
 }
@@ -529,7 +528,6 @@ body {
   .additional-studies {
     grid-template-columns: repeat(2, 1fr);
   }
-
 }
 
 /* Mobile Responsive */
@@ -622,7 +620,7 @@ body {
     padding: 0px 40px 80px;
     margin: 0 auto;
   }
-  
+
   .study-card {
     height: 600px;
   }
