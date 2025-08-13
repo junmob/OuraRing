@@ -25,7 +25,7 @@ body {
 .section1-image {
   position: relative;
   overflow: hidden;
-  background-image: url("/assets/images/WhyOura.jpg");
+  background-image: url("../assets/images/WhyOura.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -313,15 +313,15 @@ body {
 }
 
 .background-june {
-  background-image: url("/assets/images/june.jpg");
+  background-image: url("../assets/images/june.jpg");
 }
 
 .background-july {
-  background-image: url("/assets/images/july.jpg");
+  background-image: url("../assets/images/july.jpg");
 }
 
 .background-august {
-  background-image: url("/assets/images/august.jpg");
+  background-image: url("../assets/images/august.jpg");
 }
 
 .section4-content {
@@ -380,7 +380,7 @@ body {
   }
 
   .section1-image {
-    background-image: url("/assets/images/WhyOura2.jpg");
+    background-image: url("../assets/images/WhyOura2.jpg");
     border-radius: 0px;
   }
 
@@ -462,7 +462,7 @@ body {
   }
 
   .section1-image {
-    background-image: url("/assets/images/WhyOura3.jpg");
+    background-image: url("../assets/images/WhyOura3.jpg");
     border-radius: 0px;
   }
 

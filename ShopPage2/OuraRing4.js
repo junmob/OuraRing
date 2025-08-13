@@ -7,12 +7,12 @@ let currentImageIndex = 1;    // Track current image index
 
 // Fixed images for image viewer (doesn't change with color selection)
 const fixedImages = [
-  "/assets/images/Silver.png",
-  "/assets/images/Black.png",
-  "/assets/images/Brushed.png",
-  "/assets/images/Stealth.png",
-  "/assets/images/Gold.png",
-  "/assets/images/Rose.png",
+  "../assets/images/Silver.png",
+  "../assets/images/Black.png",
+  "../assets/images/Brushed.png",
+  "../assets/images/Stealth.png",
+  "../assets/images/Gold.png",
+  "../assets/images/Rose.png",
 ];
 
 // Initialize
