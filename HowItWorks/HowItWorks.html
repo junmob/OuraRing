@@ -6,7 +6,10 @@
   <title>How does Oura Ring work: Smart Ring Health Tracking</title>
   <link rel="icon" type="image/x-icon" href="/assets/images/icon-32x32.png">
   <link rel="stylesheet" href="../components//header/header.css">
+  <link rel="stylesheet" href="../components/footer/footer.css">
   <link rel="stylesheet" href="../shared/fonts.css">
+  <link rel="stylesheet" href="HowItWorks.css" />
+  <script src="HowItWorks.js"></script>
 </head>
 <body>
   
@@ -16,6 +19,9 @@
     
   </main>  
 
+  <footer id="footer"></footer>
+
+  <!-- Header -->
   <script>
     fetch('../components/header/header.html')
       .then(res => res.text())
@@ -24,6 +30,19 @@
 
         const script = document.createElement('script');
         script.src = '../components//header/header.js';
+        document.body.appendChild(script);
+      });
+  </script>
+
+  <!-- Footer -->
+  <script>
+    fetch('../components/footer/footer.html')
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById('footer').innerHTML = data;
+
+        const script = document.createElement('script');
+        script.src = '../components//footer/footer.js';
         document.body.appendChild(script);
       });
   </script>
