@@ -231,9 +231,10 @@ html {
   width: 100%;
   padding: 0 48px;
   box-sizing: border-box;
-  max-height: 1400px;
-  height: 50vh;
   gap: 40px;
+  min-height: 400px;
+  height: 50vh;
+  margin: 40px 0;
 }
 
 .section3-text {
@@ -269,6 +270,7 @@ html {
 .section3-media video,
 .section3-image img {
   width: 100%;
+  max-width: 100%;
   height: auto;
   border-radius: 24px;
   object-fit: cover;
@@ -376,13 +378,15 @@ html {
   max-height: 100%;
   object-fit: contain;
   opacity: 0;
-  transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: opacity 0.5s ease, transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   z-index: 1;
+  will-change: transform, opacity;
 }
 
 .ring-image.active {
   opacity: 1;
   z-index: 2;
+  transform: translate(-50%, -50%);
 }
 
 .ring-image.slide-left {
@@ -588,24 +592,28 @@ html {
 
   .section3-content {
     flex-direction: column;
-    gap: 20px;
+    gap: 30px;
     height: auto;
+    padding: 0 24px;
+    min-height: unset;
   }
 
-  .section3-text,
-  .section3-media {
-    flex: 1 1 auto;
-  }
+.section3-text,
+.section3-media,
+.section3-image {
+  flex: 1 1 auto;
+  width: 100%;
+}
 
   .section3-text {
     order: 2;
+    text-align: justify;
   }
 
-  .section3-media {
-    order: 1;
-    width: 100%;
-    height: auto;
-  }
+.section3-media,
+.section3-image {
+  order: 1;
+}
 
   .section3-media video {
     width: 100%;
